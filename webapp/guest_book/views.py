@@ -22,3 +22,18 @@ def create_view(request):
 		status = request.POST.get('status')
 		article = Article.objects.create(author=author, author_email=author_email, text=text, status=status)
 		return redirect('index')
+
+def delete_view(request, article_pk):
+	if (request.method == 'GET'):
+		article = get_object_or_404(Article, pk=article_pk)
+		context = {
+			'article': article
+		}
+		return render(request, 'delete.html', context)
+	elif(request.method == 'POST'):
+		if request.POST.get('answer') == 'yes':
+			article = Article.objects.get(pk=article_pk)
+			article.delete()
+			return redirect('index')
+		else:
+			return redirect('index')
