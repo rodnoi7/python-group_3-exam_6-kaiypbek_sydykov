@@ -11,3 +11,14 @@ def index_view(request):
 		'articles': articles
 	}
 	return render(request, 'index.html', context)
+
+def create_view(request):
+	if request.method == 'GET':
+		return render(request, 'add_article.html')
+	elif request.method == 'POST':
+		author = request.POST.get('author')
+		author_email = request.POST.get('author_email')
+		text = request.POST.get('text')
+		status = request.POST.get('status')
+		article = Article.objects.create(author=author, author_email=author_email, text=text, status=status)
+		return redirect('index')

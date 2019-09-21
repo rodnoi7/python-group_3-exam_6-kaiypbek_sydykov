@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Add article{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block content %}
+    <h1>Вы уверены что хотите удалить запись?</h1>
+
+    <form action="{% url 'delete' article.pk %}" method="post">
+        {% csrf_token %}
+            <p><input name="answer" type="radio" value="yes">Да</p><br/>
+            <p><input name="answer" type="radio" value="no" checked>Нет</p><br/>
+        <input type="submit" value="Send"/>
+    </form>
+{% endblock %}

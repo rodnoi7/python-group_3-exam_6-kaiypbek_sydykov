@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Add article{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block content %}
+    <h1>Добавить новую запись</h1>
+
+    <form action="{% url 'create' %}" method="post">
+        {% csrf_token %}
+
+        <label>Author:</label><br/>
+        <input type="text" name="author"/><br/>
+
+        <label>Author email:</label><br/>
+        <input type="text" name="author_email"/><br/>
+
+        <label>Text:</label><br/>
+        <textarea name="text"></textarea><br/>
+
+        <label>Status:</label><br/>
+            <p><input name="status" type="radio" value="Active" checked>Active</p><br/>
+            <p><input name="status" type="radio" value="Deactive">Deactive</p><br/>
+
+        <input type="submit" value="Send"/>
+    </form>
+{% endblock %}

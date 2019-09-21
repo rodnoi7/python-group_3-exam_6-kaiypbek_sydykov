@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Guest book{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block content %}
+    <h1>Гостевая книга</h1>
+    {% for article in articles %}
+        <div class='article'>
+            <div class='title'>
+                <h2>{{ article.author }} ({{ article.author_email }})</h2>
+                <a href=""><i class="fa fa-times" aria-hidden="true"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            </div>
+            <p>{{ article.text}}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
