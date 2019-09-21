@@ -16,13 +16,13 @@
     </form>
 </div>
     <h1>Гостевая книга</h1>
-    {% for article in articles %}
+    {% for record in records %}
         <div class='article'>
             <div class='title'>
-                <h2>{{ article.author }} ({{ article.author_email }})</h2>
-                <a href="{% url 'delete' article.pk %}"><i class="fa fa-times" aria-hidden="true"></i></a><a href="{% url 'update' article.pk %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <h2>{{ record.author }} ({{ record.author_email }})</h2>
+                <a href="{% url 'delete' record.pk %}"><i class="fa fa-times" aria-hidden="true"></i></a><a href="{% url 'update' record.pk %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
             </div>
-            <p>{{ article.text}}</p>
+            <p>{{ record.text}}</p>
         </div>
     {% endfor %}
 {% endblock %}

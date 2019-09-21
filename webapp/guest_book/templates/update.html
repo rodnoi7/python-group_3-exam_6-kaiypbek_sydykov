@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Update article{% endblock %}
+{% block title %}Update record{% endblock %}
 
 {% block menu %}
 {% endblock %}
@@ -8,7 +8,7 @@
 {% block content %}
     <h1>Редактирование статьи</h1>
 
-    <form action="{% url 'update' article.pk %}" method="post">
+    <form action="{% url 'update' record.pk %}" method="post">
         {% include 'form.html' %}
     </form>
 {% endblock %}

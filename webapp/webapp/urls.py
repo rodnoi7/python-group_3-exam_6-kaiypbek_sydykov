@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_view, name='index'),
     path('create_article', create_view, name='create'),
-    path('article<int:article_pk>/delete', delete_view, name='delete'),
-    path('article<int:article_pk>/update', update_view, name='update'),
+    path('article<int:record_pk>/delete', delete_view, name='delete'),
+    path('article<int:record_pk>/update', update_view, name='update'),
 ]
 urlpatterns += staticfiles_urlpatterns()

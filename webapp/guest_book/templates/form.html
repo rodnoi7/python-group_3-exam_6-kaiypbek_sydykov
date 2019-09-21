@@ -1,13 +1,13 @@
 {% csrf_token %}
 
 <label>Автор:</label><br/>
-<input type="text" name="author" value="{{ article.author }}"/><br/>
+<input type="text" name="author" value="{{ record.author }}"/><br/>
 
 <label>Email автора:</label><br/>
-<input name="author_email" value='{{ article.author_email }}'/><br/>
+<input name="author_email" value='{{ record.author_email }}'/><br/>
 
 <label>Текст:</label><br/>
-<textarea type="text" name="text">{{ article.text }}</textarea><br/>
+<textarea type="text" name="text">{{ record.text }}</textarea><br/>
 <br/>
 
 <input type="submit" value="Send"/>
