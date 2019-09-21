@@ -35,7 +35,6 @@ a:hover, a:visited {
     line-height: 1;
     padding: 0;
     margin: 0;
-    display: inline-block;
     color: #ffffff;
     font-weight: bold;
 }
@@ -47,7 +46,7 @@ a:hover, a:visited {
     padding: 5px;
 }
 
-.menu li a, .but {
+.navbar .menu li {
     display: inline-block;
 }
 
@@ -79,4 +78,20 @@ h1 {
 .fa-pencil {
     font-size: 40px !important;
     margin-right: 20px;
+}
+
+.fa:hover, .fa:visited, .fa {
+    color: #212529 !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.search {
+    float: auto;
+}
+
+.navbar {
+    overflow: hidden;
 }

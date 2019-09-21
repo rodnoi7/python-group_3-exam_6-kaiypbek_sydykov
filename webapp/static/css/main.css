@@ -47,7 +47,7 @@ a:hover, a:visited {
     padding: 5px;
 }
 
-.menu li a, .but {
+.navbar .menu li {
     display: inline-block;
 }
 
@@ -67,3 +67,40 @@ h1 {
     margin-bottom: 10px;
 }
 
+.title h2 {
+    display: inline-block;
+}
+
+.fa-pencil, .fa-times {
+    float: right;
+    font-size: 50px !important;
+}
+
+.fa-pencil {
+    font-size: 40px !important;
+    margin-right: 20px;
+}
+
+.fa:hover, .fa:visited, .fa {
+    color: #212529 !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.search {
+    float: right;
+}
+
+.navbar {
+    overflow: hidden;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}

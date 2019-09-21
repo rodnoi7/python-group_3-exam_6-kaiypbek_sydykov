@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from guest_book.views import index_view, create_view, delete_view
+from guest_book.views import index_view, create_view, delete_view, update_view
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
@@ -23,5 +23,6 @@ urlpatterns = [
     path('', index_view, name='index'),
     path('create_article', create_view, name='create'),
     path('article<int:article_pk>/delete', delete_view, name='delete'),
+    path('article<int:article_pk>/update', update_view, name='update'),
 ]
 urlpatterns += staticfiles_urlpatterns()

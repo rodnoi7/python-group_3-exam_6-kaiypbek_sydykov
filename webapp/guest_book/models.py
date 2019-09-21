@@ -4,11 +4,11 @@ from django.db import models
 
 class Article(models.Model):
     STAT_ACTIV = 'Active'
-    STAT_DEACTIV = 'Deactive'
+    STAT_DEACTIV = 'Blocked'
 
     STATUS_CHOICES = (
         (STAT_ACTIV, 'Active'),
-        (STAT_DEACTIV, 'Deactive')
+        (STAT_DEACTIV, 'Blocked')
     )
 
     author = models.CharField(max_length=200, null=False, blank=False, verbose_name='Автор')

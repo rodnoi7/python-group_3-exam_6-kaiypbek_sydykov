@@ -3,15 +3,24 @@
 {% block title %}Guest book{% endblock %}
 
 {% block menu %}
+
 {% endblock %}
 
 {% block content %}
+<div class='align-top search'>
+    <form action='{% url "index" %}' method="get">
+        <div class="form-group search">
+            <label for="exampleInputEmail1">Автор:</label><input type="text" name='author' class="form-control">
+            <button type="submit" class="btn btn-dark">Найти</button>
+        </div>
+    </form>
+</div>
     <h1>Гостевая книга</h1>
     {% for article in articles %}
         <div class='article'>
             <div class='title'>
                 <h2>{{ article.author }} ({{ article.author_email }})</h2>
-                <a href="{% url 'delete' article.pk %}"><i class="fa fa-times" aria-hidden="true"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a href="{% url 'delete' article.pk %}"><i class="fa fa-times" aria-hidden="true"></i></a><a href="{% url 'update' article.pk %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
             </div>
             <p>{{ article.text}}</p>
         </div>
